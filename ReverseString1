@@ -1,0 +1,30 @@
+//Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+
+
+
+import java.util.*;
+import javafx.util.Pair;
+public class ideone2 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String[] s1 = scan.nextLine().split("");
+		for(int i = 0; i < s1.length; i++){
+			System.out.println(s1[i]);
+		}
+		Stack<Character> st = new Stack<Character>();
+//		String s = "akshat";
+		for(int i = 0; i < s1.length(); i++){
+			st.push(s1.charAt(i));
+		}
+		//System.out.println(st.size());
+		for(int i = 0;i < s.length(); i++){
+			System.out.println(st.pop());
+		}
+		
+	}
+}
+			
+
+
+
