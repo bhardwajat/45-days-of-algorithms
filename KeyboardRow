@@ -1,0 +1,90 @@
+Given a List of words, return the words that can be typed using letters of alphabet on only one row's of American keyboard like the image below.
+
+
+public class Solution {
+    public String[] findWords(String[] words) {
+    //    Scanner scan = new Scanner(System.in);
+	//	String[] words = new String[]{"Hello", "Alaska", "Dad", "Peace"};
+		Set<Character> s1 = new HashSet<Character>();
+		Set<Character> s2 = new HashSet<Character>();
+		Set<Character> s3 = new HashSet<Character>();
+		s1.add('q');
+		s1.add('w');
+		s1.add('e');
+		s1.add('r');
+		s1.add('t');
+		s1.add('y');
+		s1.add('u');
+		s1.add('i');
+		s1.add('o');
+		s1.add('p');
+		
+		s2.add('a');
+		s2.add('s');
+		s2.add('d');
+		s2.add('f');
+		s2.add('g');
+		s2.add('h');
+		s2.add('j');
+		s2.add('k');
+		s2.add('l');
+		
+		s3.add('z');
+		s3.add('x');
+		s3.add('c');
+		s3.add('v');
+		s3.add('b');
+		s3.add('n');
+		s3.add('m');
+		
+		ArrayList<String> a = new ArrayList<String>();
+		
+		for(String word : words){
+			char[] c = word.toLowerCase().toCharArray();
+			int n = 0;
+			for(Character c1: c){
+				if(s1.contains(c1)){
+					n++;
+				}
+				else{
+					break;
+				}
+			}
+			if(n == c.length){
+				a.add(word);
+				continue;
+			}
+			n = 0;
+			for(Character c1: c){
+				if(s2.contains(c1)){
+					n++;
+				}
+				else{
+					break;
+				}
+			}
+			if(n == c.length){
+				a.add(word);
+				continue;
+			}
+			n = 0;
+			for(Character c1: c){
+				if(s3.contains(c1)){
+					n++;
+				}
+				else{
+					break;
+				}
+			}
+			if(n == c.length){
+				a.add(word);
+			}
+			
+				
+			}
+		String[] a1 =new String[a.size()];
+		a1 = a.toArray(a1);
+		return a1;
+        
+    }
+}
